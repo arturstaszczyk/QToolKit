@@ -2,7 +2,7 @@
 
 #include <QDebug>
 
-#include "Commons.h"
+#include "QToolKit/Commons.h"
 
 CommandRecycler CommandRecycler::sInstance;
 

@@ -6,7 +6,7 @@
 #include <QTimer>
 #include <QObject>
 
-#include <Commands/Command.h>
+#include "QToolKit/Commands/Command.h"
 
 class CommandRecycler : public QObject
 {
