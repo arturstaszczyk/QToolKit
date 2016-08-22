@@ -13,7 +13,7 @@ class CommandRecycler : public QObject
     Q_OBJECT
 public:
 
-    static CommandRecycler& instance() { return sInstance; }
+    static CommandRecycler& instance();
 
     void setUpdateTime(std::chrono::milliseconds recyclerRefreshRate);
     void executeAndDispose(Command* command);
@@ -29,7 +29,7 @@ private:
     explicit CommandRecycler(QObject *parent = 0);
     Q_DISABLE_COPY(CommandRecycler)
 
-    static CommandRecycler sInstance;
+    static CommandRecycler* sInstance;
 };
 
 #endif // COMMANDRECYCLER_H

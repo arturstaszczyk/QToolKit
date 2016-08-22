@@ -4,12 +4,20 @@
 
 #include "QToolKit/Commons.h"
 
-CommandRecycler CommandRecycler::sInstance;
+CommandRecycler* CommandRecycler::sInstance = nullptr;
 
 CommandRecycler::CommandRecycler(QObject *parent)
     : QObject(parent)
     , mRecyclerTimer(nullptr)
 {
+}
+
+CommandRecycler& CommandRecycler::instance()
+{
+    if(sInstance == nullptr)
+        sInstance = new CommandRecycler();
+
+    return *sInstance;
 }
 
 void CommandRecycler::setUpdateTime(std::chrono::milliseconds recyclerRefreshRate)
